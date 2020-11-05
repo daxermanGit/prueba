@@ -24,7 +24,17 @@ function makeCloud(json){
 	 "dataField": "value"
 	});
 
-	series.labels.template.url = "https://stackoverflow.com/questions/tagged/{word}";
+	series.events.on("arrangeended", function loadDoc() {
+		  var xhttp = new XMLHttpRequest();
+		  var url = "../statics/cloud.html";//La url que se carga
+		  xhttp.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+		     document.getElementById("demo").innerHTML = this.responseText;
+		    }
+		  };
+		  xhttp.open("POST", url, true);
+		  xhttp.send();
+		});
 	series.labels.template.urlTarget = "_blank";
 	series.labels.template.tooltipText = "{word}: {value}";
 
@@ -44,7 +54,7 @@ function makeCloud(json){
 
 function loadDoc() {
   var xhttp = new XMLHttpRequest();
-  var url = "../statics/pruebaAjax.html";//La url que se carga
+  var url = "../statics/cloud.html";//La url que se carga
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
      document.getElementById("chartCloudDiv").innerHTML = this.responseText;
