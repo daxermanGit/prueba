@@ -44,7 +44,7 @@ function makeCloud(json){
 
 function loadDoc() {
   var xhttp = new XMLHttpRequest();
-  var url = "C:/Users/David Ricardo/Desktop/Hackathon Castro y co/statics/pruebaAjax.html";//La url que se carga
+  var url = "../statics/pruebaAjax.html";//La url que se carga
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
      document.getElementById("chartCloudDiv").innerHTML = this.responseText;
