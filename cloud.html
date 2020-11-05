@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+
+
+<!-- Styles -->
+<style>
+#chartdiv {
+  width: 100%;
+  height: 600px;
+}
+</style>
+
+<!-- Resources -->
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/plugins/wordCloud.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+<script type="text/javascript" src="scripts/cloud.js"></script>
+
+<script>
+    var json = [ {
+    "tag": "javascript",
+    "count": "1765836"
+}, {
+    "tag": "java",
+    "count": "1517355"
+}, {
+    "tag": "c#",
+    "count": "1287629"
+}, {
+    "tag": "php",
+    "count": "1263946"
+}, {
+    "tag": "android",
+    "count": "1174721"
+}, {
+    "tag": "python",
+    "count": "2116769"
+}];
+
+makeCloud(json);
+
+</script>
+<!-- Chart code -->
+
+<!--Script was here-->
+<body>
+<!-- HTML -->
+<div id="chartCloudDiv"></div>
+    <button type="button" onclick="loadDoc()">
+        Change Content
+    </button>
+</body>
+</html>
